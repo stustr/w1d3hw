@@ -48,10 +48,10 @@ def at_least():
         if task["time_taken"] >= int(user_inp):
             at_least_list.append(task["description"])
 
-    print(at_least_list)
+    return(at_least_list)
 
 
-return(at_least())
+print(at_least())
 
 # 5
 def pick_by_desc():
