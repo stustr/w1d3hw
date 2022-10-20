@@ -68,7 +68,10 @@ pick_by_desc()
 # 6
 def update_by_desc():
     user_inp = input("Description to complete: ")
-
+    for task in tasks:
+        if (user_inp == task['description']):
+            task['completed'] = True
+        
 
 update_by_desc()
 
