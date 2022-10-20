@@ -13,7 +13,8 @@ def uncompleted_tasks(list_name):
         if task["completed"] == False:
             uncomp_tasks.append(task["description"])
 
-    return(uncomp_tasks)
+    return uncomp_tasks
+
 
 print(uncompleted_tasks(tasks))
 
@@ -24,7 +25,7 @@ def completed_tasks(list_name):
         if task["completed"] == True:
             comp_tasks.append(task["description"])
 
-    return(comp_tasks)
+    return comp_tasks
 
 
 print(completed_tasks(tasks))
@@ -41,6 +42,8 @@ def task_descriptions(list_name):
 task_descriptions(tasks)
 
 4
+
+
 def at_least(list_name):
     user_inp = input("Filter tasks by time: ")
     at_least_list = []
@@ -48,7 +51,7 @@ def at_least(list_name):
         if task["time_taken"] >= int(user_inp):
             at_least_list.append(task["description"])
 
-    return(at_least_list)
+    return at_least_list
 
 
 print(at_least(tasks))
@@ -58,7 +61,7 @@ def pick_by_desc(list_name):
     user_inp = input("Pick a task by description: ")
     for task in list_name:
         if task["description"] == user_inp:
-            return(task)
+            return task
 
 
 print(pick_by_desc(tasks))
@@ -67,19 +70,41 @@ print(pick_by_desc(tasks))
 def update_by_desc(list_name):
     user_inp = input("Description to complete: ")
     for task in list_name:
-        if (user_inp == task['description']):
-            task['completed'] = True
-        
+        if user_inp == task["description"]:
+            task["completed"] = True
+
 
 update_by_desc(tasks)
 
 # 7
-def add_task(list_name):
-    user_inp = input("Add task as dict: ")
-    tasks.append(user_inp)
+# def create_task(desc, time_taken):
+#     task = {}
+#     task['description'] = desc
+#     task['completed'] = False
+#     task['time_take'] = time_taken
+
+# def add_task(list_name):
+#     user_inp = input("Add task as dict: ")
+#     tasks.append(user_inp)
+    
+# def add_task(list_name):
+#     user_inp = input("Add task as dict: ")
+#     tasks.append(user_inp)
 
 
-add_task(tasks)
+# add_task(tasks)
+    
+def create_task():
+    list_name = eval(input("What list shall I add it to? "))
+    desc = input("What task are we adding? ")
+    time_taken = input("How long will it take? ")
+    task = {}
+    task['description'] = desc
+    task['completed'] = False
+    task['time_take'] = time_taken
+    list_name.append(task)
+
+create_task()
 
 print(tasks)
 
