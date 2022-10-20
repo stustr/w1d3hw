@@ -7,79 +7,79 @@ tasks = [
 ]
 
 # 1
-def uncompleted_tasks():
+def uncompleted_tasks(list_name):
     uncomp_tasks = []
-    for task in tasks:
+    for task in list_name:
         if task["completed"] == False:
             uncomp_tasks.append(task["description"])
 
     return(uncomp_tasks)
 
-print(uncompleted_tasks())
+print(uncompleted_tasks(tasks))
 
 # 2
-def completed_tasks():
+def completed_tasks(list_name):
     comp_tasks = []
-    for task in tasks:
+    for task in list_name:
         if task["completed"] == True:
             comp_tasks.append(task["description"])
 
     return(comp_tasks)
 
 
-print(completed_tasks())
+print(completed_tasks(tasks))
 
 # 3
-def task_descriptions():
+def task_descriptions(list_name):
     task_desc = []
-    for task in tasks:
+    for task in list_name:
         task_desc.append(task["description"])
 
     print(task_desc)
 
 
-task_descriptions()
+task_descriptions(tasks)
 
 4
-def at_least():
+def at_least(list_name):
     user_inp = input("Filter tasks by time: ")
     at_least_list = []
-    for task in tasks:
+    for task in list_name:
         if task["time_taken"] >= int(user_inp):
             at_least_list.append(task["description"])
 
     return(at_least_list)
 
 
-print(at_least())
+print(at_least(tasks))
 
 # 5
-def pick_by_desc():
+def pick_by_desc(list_name):
     user_inp = input("Pick a task by description: ")
-    for task in tasks:
+    for task in list_name:
         if task["description"] == user_inp:
             return(task)
 
 
-print(pick_by_desc())
+print(pick_by_desc(tasks))
 
 # 6
-def update_by_desc():
+def update_by_desc(list_name):
     user_inp = input("Description to complete: ")
-    for task in tasks:
+    for task in list_name:
         if (user_inp == task['description']):
             task['completed'] = True
         
 
-update_by_desc()
+update_by_desc(tasks)
 
 # 7
-def add_task():
+def add_task(list_name):
     user_inp = input("Add task as dict: ")
     tasks.append(user_inp)
 
 
-add_task()
+add_task(tasks)
 
 print(tasks)
 
