@@ -13,23 +13,21 @@ def uncompleted_tasks():
         if task["completed"] == False:
             uncomp_tasks.append(task["description"])
 
-    print(uncomp_tasks)
+    return(uncomp_tasks)
 
+print(uncompleted_tasks())
 
 # 2
-uncompleted_tasks()
-
-
 def completed_tasks():
     comp_tasks = []
     for task in tasks:
         if task["completed"] == True:
             comp_tasks.append(task["description"])
 
-    print(comp_tasks)
+    return(comp_tasks)
 
 
-completed_tasks()
+print(completed_tasks())
 
 # 3
 def task_descriptions():
@@ -53,17 +51,17 @@ def at_least():
     print(at_least_list)
 
 
-at_least()
+return(at_least())
 
 # 5
 def pick_by_desc():
     user_inp = input("Pick a task by description: ")
     for task in tasks:
         if task["description"] == user_inp:
-            print(task)
+            return(task)
 
 
-pick_by_desc()
+print(pick_by_desc())
 
 # 6
 def update_by_desc():
